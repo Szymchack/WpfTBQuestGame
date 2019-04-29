@@ -72,7 +72,7 @@ namespace WpfTBQuestGame.BusinessLayer
             gameSessionView.Show();
 
 
-            _playerSetupView.Close();
+          //  _playerSetupView.Close();
         }
     }
 }

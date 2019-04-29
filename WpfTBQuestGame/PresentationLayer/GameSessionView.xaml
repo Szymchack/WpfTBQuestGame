@@ -266,7 +266,7 @@
                                             ItemsSource="{Binding CurrentLocation.GameItems}" 
                                             SelectedItem="{Binding CurrentGameItem}"
                                             AutoGenerateColumns="False"
-                                            HeadersVisibility="Column">
+                                            HeadersVisibility="Column" Margin="10,0,-10,0">
                                             <DataGrid.Columns>
                                                 <DataGridTextColumn 
                                                     Header="Description" 

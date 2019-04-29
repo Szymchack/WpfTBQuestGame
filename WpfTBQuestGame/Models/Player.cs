@@ -176,9 +176,6 @@ namespace WpfTBQuestGame.Models
             Wealth = _inventory.Sum(i => i.GameItem.Value * i.Quantity);
         }
 
-        /// <summary>
-        /// update the game item category lists
-        /// </summary>
         public void UpdateInventoryCategories()
         {
             Potions.Clear();
@@ -195,15 +192,9 @@ namespace WpfTBQuestGame.Models
             }
         }
 
-        /// <summary>
-        /// add selected item to inventory or update quantity if already in inventory
-        /// </summary>
-        /// <param name="selectedGameItemQuantity">selected item</param>
         public void AddGameItemQuantityToInventory(GameItemQuantity selectedGameItemQuantity)
         {
-            //
-            // locate selected item in inventory
-            //
+
             GameItemQuantity gameItemQuantity = _inventory.FirstOrDefault(i => i.GameItem.Id == selectedGameItemQuantity.GameItem.Id);
 
             if (gameItemQuantity == null)
@@ -222,15 +213,9 @@ namespace WpfTBQuestGame.Models
             UpdateInventoryCategories();
         }
 
-        /// <summary>
-        /// remove selected item from inventory
-        /// </summary>
-        /// <param name="selectedGameItemQuantity">selected item</param>
         public void RemoveGameItemQuantityFromInventory(GameItemQuantity selectedGameItemQuantity)
         {
-            //
-            // locate selected item in inventory
-            //
+
             GameItemQuantity gameItemQuantity = _inventory.FirstOrDefault(i => i.GameItem.Id == selectedGameItemQuantity.GameItem.Id);
 
             if (gameItemQuantity != null)
@@ -249,10 +234,6 @@ namespace WpfTBQuestGame.Models
         }
         #region BATTLE METHODS
 
-        /// <summary>
-        /// return hit points [0 - 100] based on the player's weapon and skill level
-        /// </summary>
-        /// <returns>hit points 0-100</returns>
         public int Attack()
         {
             int hitPoints = random.Next(CurrentWeapon.MinimumDamage, CurrentWeapon.MaximumDamage) * _skillLevel;
@@ -267,11 +248,7 @@ namespace WpfTBQuestGame.Models
             }
         }
 
-        /// <summary>
-        /// return hit points [0 - 100] based on the player's weapon and skill level
-        /// adjusted to deliver more damage when first attacked
-        /// </summary>
-        /// <returns>hit points 0-100</returns>
+
         public int Defend()
         {
             int hitPoints = (random.Next(CurrentWeapon.MinimumDamage, CurrentWeapon.MaximumDamage) * _skillLevel) - DEFENDER_DAMAGE_ADJUSTMENT;
@@ -290,10 +267,6 @@ namespace WpfTBQuestGame.Models
             }
         }
 
-        /// <summary>
-        /// return hit points [0 - 100] based on the player's skill level
-        /// </summary>
-        /// <returns>hit points 0-100</returns>
         public int Retreat()
         {
             int hitPoints = _skillLevel * MAXIMUM_RETREAT_DAMAGE;
