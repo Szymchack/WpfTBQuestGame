@@ -43,10 +43,7 @@ namespace WpfTBQuestGame.Models
             CurrentWeapon = currentWeapon;
         }
 
-        /// <summary>
-        /// generate a message or use default
-        /// </summary>
-        /// <returns>message text</returns>
+        
         public string Speak()
         {
             if (this.Messages != null)
@@ -59,10 +56,7 @@ namespace WpfTBQuestGame.Models
             }
         }
 
-        /// <summary>
-        /// randomly select a message from the list of messages
-        /// </summary>
-        /// <returns>message text</returns>
+       
         private string GetMessage()
         {
             int messageIndex = r.Next(0, Messages.Count());
@@ -71,10 +65,7 @@ namespace WpfTBQuestGame.Models
 
         #region BATTLE METHODS
 
-        /// <summary>
-        /// return hit points [0 - 100] based on the NPCs weapon and skill level
-        /// </summary>
-        /// <returns>hit points 0-100</returns>
+      
         public int Attack()
         {
             int hitPoints = random.Next(CurrentWeapon.MinimumDamage, CurrentWeapon.MaximumDamage) * SkillLevel;
@@ -89,11 +80,6 @@ namespace WpfTBQuestGame.Models
             }
         }
 
-        /// <summary>
-        /// return hit points [0 - 100] based on the NPCs weapon and skill level
-        /// adjusted to deliver more damage when first attacked
-        /// </summary>
-        /// <returns>hit points 0-100</returns>
         public int Defend()
         {
             int hitPoints = (random.Next(CurrentWeapon.MinimumDamage, CurrentWeapon.MaximumDamage) * SkillLevel) - DEFENDER_DAMAGE_ADJUSTMENT;
@@ -112,10 +98,6 @@ namespace WpfTBQuestGame.Models
             }
         }
 
-        /// <summary>
-        /// return hit points [0 - 100] based on the NPCs skill level
-        /// </summary>
-        /// <returns>hit points 0-100</returns>
         public int Retreat()
         {
             int hitPoints = SkillLevel * MAXIMUM_RETREAT_DAMAGE;

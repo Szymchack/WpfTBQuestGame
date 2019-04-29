@@ -16,7 +16,7 @@ namespace WpfTBQuestGame.Models
 
         #region FIELDS
 
-        private int _id; // must be a unique value for each object
+        private int _id; 
         private string _name;
         private string _description;
         private bool _accessible;
@@ -120,18 +120,11 @@ namespace WpfTBQuestGame.Models
 
         #region METHODS
 
-        //
-        // location is open if character has enough XP
-        //
         public bool IsAccessibleByExperiencePoints(int playerExperiencePoints)
         {
             return playerExperiencePoints >= _requiredExperiencePoints ? true : false;
         }
 
-        //
-        // Stopgap to force the list of items in the location to update
-        //
-        // Velis todo refactor using the CollectionChanged event
         public void UpdateLocationGameItems()
         {
             ObservableCollection<GameItemQuantity> updatedLocationGameItems = new ObservableCollection<GameItemQuantity>();
@@ -149,10 +142,6 @@ namespace WpfTBQuestGame.Models
             }
         }
 
-        /// <summary>
-        /// add selected item to location or update quantity if already in location
-        /// </summary>
-        /// <param name="selectedGameItemQuantity">selected item</param>
         public void AddGameItemQuantityToLocation(GameItemQuantity selectedGameItemQuantity)
         {
             //
@@ -176,15 +165,10 @@ namespace WpfTBQuestGame.Models
             UpdateLocationGameItems();
         }
 
-        /// <summary>
-        /// remove selected item from location or update quantity
-        /// </summary>
-        /// <param name="selectedGameItemQuantity">selected item</param>
+
         public void RemoveGameItemQuantityFromLocation(GameItemQuantity selectedGameItemQuantity)
         {
-            //
-            // locate selected item in location
-            //
+
             GameItemQuantity gameItemQuantity = _gameItems.FirstOrDefault(i => i.GameItem.Id == selectedGameItemQuantity.GameItem.Id);
 
             if (gameItemQuantity != null)

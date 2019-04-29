@@ -28,10 +28,7 @@ namespace WpfTBQuestGame.Models
             Messages = messages;
         }
 
-        /// <summary>
-        /// generate a message or use default
-        /// </summary>
-        /// <returns>message text</returns>
+       
         public string Speak()
         {
             if (this.Messages != null)
@@ -44,10 +41,7 @@ namespace WpfTBQuestGame.Models
             }
         }
 
-        /// <summary>
-        /// randomly select a message from the list of messages
-        /// </summary>
-        /// <returns>message text</returns>
+        
         private string GetMessage()
         {
             int messageIndex = r.Next(0, Messages.Count());

@@ -8,9 +8,7 @@ namespace WpfTBQuestGame.Models
 {
     public abstract class GameItem
     {
-        //
-        // auto implemented properties are used for 
-        //
+        
         public int Id { get; set; }
         public string Name { get; set; }
         public int Value { get; set; }
