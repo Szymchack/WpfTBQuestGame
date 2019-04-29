@@ -109,5 +109,10 @@ namespace WpfTBQuestGame.PresentationLayer
                 _gameSessionViewModel.OnPlayerRetreat();
             }
         }
+
+        private void LocationNpcsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

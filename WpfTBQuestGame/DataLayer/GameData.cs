@@ -205,7 +205,7 @@ namespace WpfTBQuestGame.DataLayer
                     Id = 1001,
                     Name = "Judy Chu",
                     Race = Character.RaceType.Human,
-                    Description = "A tall women of respectable stature.",
+                    Description = "A small women of respectable stature.",
                     Messages = new List<string>()
                     {
                         "Hello, my name is Ms Smith. I noticed you when you arrived.",

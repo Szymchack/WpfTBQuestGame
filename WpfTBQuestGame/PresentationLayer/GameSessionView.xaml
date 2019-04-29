@@ -296,7 +296,7 @@
                                             ItemsSource="{Binding CurrentLocation.Npcs}" 
                                             SelectedItem="{Binding CurrentNpc}"
                                             AutoGenerateColumns="False"
-                                            HeadersVisibility="Column">
+                                            HeadersVisibility="Column" SelectionChanged="LocationNpcsDataGrid_SelectionChanged">
                                             <DataGrid.Columns>
                                                 <DataGridTextColumn 
                                                     Header="Description" 
